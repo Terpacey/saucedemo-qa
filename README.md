@@ -17,7 +17,7 @@ The goal of this project is to showcase junior QA testing skills including:
 - GitHub Version Control
 
 ## Project Structure
-- manual-tests/ → Manual test documentation
+- manual_testing/ → Manual test documentation
 - automation/ → Automated test scripts
 - automation/pages/ → Page object models
 - automation/tests/ → Test implementations
@@ -27,11 +27,10 @@ The goal of this project is to showcase junior QA testing skills including:
 pip install -r automation/requirements.txt
 pytest
 ```
-Install the appropriate selenium drivers for your browser here: 
 The browser set up for this project is Chrome to represent the most common user base.
 To change the web browser used, navigate to 
 - automation/
-Open the script and change find the following line of code
+Open the script and find the following line of code
 
 ```bash
 driver = webdriver.Chrome()
@@ -40,7 +39,5 @@ Change it from Chrome to the browser of your choice after ensuring all required 
 For example, to change the browser to Edge, edit the code to match the following:
 
 ```bash
-driver = webdriver.Chrome()
+driver = webdriver.Edge()
 ```
-
-Note: These automation tests will clear cookies upon launching your browser, proceed with running them only if acceptable.
