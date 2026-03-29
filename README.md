@@ -17,7 +17,8 @@ The goal of this project is to showcase junior QA testing skills including:
 - GitHub Version Control
 
 ## Project Structure
-- manual_testing/ → Manual test documentation
+- manual_testing/ → Manual test cases
+- defect_reports/ → Individual defect reports logged during testing
 - automation/ → Automated test scripts
 - automation/pages/ → Page object models
 - automation/tests/ → Test implementations

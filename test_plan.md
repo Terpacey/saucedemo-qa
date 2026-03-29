@@ -27,6 +27,7 @@ Manual:
 - OS: Fedora Linux KDE 43
 - Browser: Chrome
 - Python 3.14.3
+- Automation designed to be portable across operating systems
 
 ### Exclusions
 
@@ -44,7 +45,7 @@ Manual testing cases will attempt to confirm visual and Quality of Life bugs(use
 
 ## Defect Reporting Procedure
 
-Defects/Bugs will be described as functionality that does not match with standard e-commerce user expectations, a standard user is assumed to be an average user that is not tech-literate but not an advanced or technical user. Defects will be reported by writing a report in the defect_reports folder as an md file, individually on a case-by-case basis. Bug reports will be grouped using sub-folders, and all reports will follow the naming convention of B_XXX, with XXX representing the number, starting with 001 to represent the BUG ID. These reports will contain the following:
+Defects will be described as functionality that does not match with standard e-commerce user expectations, a standard user is assumed to be an average user that is not tech-literate but not an advanced or technical user. Defects will be reported by writing a report in the defect_reports folder as an md file, individually on a case-by-case basis. Defect reports will be grouped using sub-folders, and all reports will follow the naming convention of D_XXX, with XXX representing the number, starting with 001 to represent the Defect ID. These reports will contain the following:
 
 - Defect ID (Repeat of file name)
 - Status
@@ -116,8 +117,6 @@ All testing, documentation, and automation performed by Hari.C
 - VSCodium (Development Environment)
 
 ## Risks and Mitigations
-
-### Risks
 
 | Risk | Mitigation |
 |------|------------|
