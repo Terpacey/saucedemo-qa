@@ -106,7 +106,7 @@
 | Actual Result | Sort options can be selected without error popup but items do not reorder |
 | Status | Failed |
 | Priority | P0 |
-| Notes | Sort is silently broken for problem_user, no error is shown to the user making this harder to detect, flagged for defect report |
+| Notes | Sort is silently broken for problem_user, no error is shown to the user, flagged for defect report |
 
 | Field | Details |
 |-------|---------|
@@ -118,7 +118,7 @@
 | Actual Result | Sort operates on displayed prices but prices change to random values on each sort and page refresh, sort order is technically applied but results are unreliable |
 | Status | Failed |
 | Priority | P1 |
-| Notes | Prices are unstable and change on every sort action and page refresh, price sort cannot be trusted to return meaningful results, top left item randomly assigned pug image on each change, flagged for defect report |
+| Notes | Prices are unstable and change on every sort action and page refresh, top left item randomly assigned pug image on each change, flagged for defect report |
 
 | Field | Details |
 |-------|---------|
@@ -214,7 +214,7 @@
 | Actual Result | Clicks register on whichever element loads under the cursor, items can be accidentally added or product pages opened during load |
 | Status | Failed |
 | Priority | P1 |
-| Notes | User can accidentally add items or navigate to product pages without intending to during the extended load time, flagged for defect report |
+| Notes | Clicks register on whichever element loads under the cursor during the extended load time, flagged for defect report |
 
 | Field | Details |
 |-------|---------|
