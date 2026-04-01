@@ -22,6 +22,7 @@ For defect priority and severity definitions, refer to the [Test Plan](../test_p
 
 Status values will be grouped as follows:
 
-- Pass (Test case results in expected outcome)
-- Fail (Test case does not result in expected outcome)
+- Not Run (Test case has not yet been executed)
+- Passed (Test case results in expected outcome)
+- Failed (Test case does not result in expected outcome)
 - Blocked (Test case cannot be run due to failed preconditions or other functional issues)

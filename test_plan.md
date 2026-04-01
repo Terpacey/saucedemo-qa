@@ -91,7 +91,7 @@ All testing, documentation, and automation performed by Hari.C
 ### Exit Criteria
 
 - All test cases have been completed
-- Test cases have been marked appropriately(Pass,Fail, Blocked, etc)
+- Test cases have been marked appropriately (Not Run, Passed, Failed, Blocked)
 - Defect reports created for bugs or defects if any
 - All critical and high priority defects have been logged and documented in the defect_reports folder
 
