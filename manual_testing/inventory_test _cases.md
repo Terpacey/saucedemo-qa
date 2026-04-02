@@ -12,6 +12,8 @@
 | Priority | P1 |
 | Notes | |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_002 |
@@ -23,6 +25,8 @@
 | Status | Passed |
 | Priority | P1 |
 | Notes | |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -36,6 +40,8 @@
 | Priority | P1 |
 | Notes | Sauce Labs Onesie is cheapest, Sauce Labs Fleece Jacket is most expensive |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_004 |
@@ -47,6 +53,8 @@
 | Status | Passed |
 | Priority | P1 |
 | Notes | |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -60,6 +68,8 @@
 | Priority | P0 |
 | Notes | Sort functionality is completely non-functional for error_user, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_006 |
@@ -71,6 +81,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | Sort functionality is completely non-functional for error_user, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -84,6 +96,8 @@
 | Priority | P0 |
 | Notes | Sort functionality is completely non-functional for error_user, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_008 |
@@ -95,6 +109,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | Sort functionality is completely non-functional for error_user, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -108,6 +124,8 @@
 | Priority | P0 |
 | Notes | Sort is silently broken for problem_user, no error is shown to the user, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_010 |
@@ -119,6 +137,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | Prices are unstable and change on every sort action and page refresh, top left item randomly assigned pug image on each change, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -132,6 +152,8 @@
 | Priority | P0 |
 | Notes | Tested with multiple items, all behaved correctly |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_012 |
@@ -143,6 +165,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Tested with multiple items, all behaved correctly |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -156,6 +180,8 @@
 | Priority | P0 |
 | Notes | Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket and Test.allTheThings() T-Shirt (Red) add buttons are non-functional, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_014 |
@@ -167,6 +193,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | Items can still be removed from the cart page directly, inventory page remove is completely non-functional for error_user, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -180,6 +208,8 @@
 | Priority | P0 |
 | Notes | Same add/remove issues as error_user, Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket and Test.allTheThings() T-Shirt (Red) add buttons are non-functional, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_016 |
@@ -191,6 +221,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | Items can still be removed from the cart page directly, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -204,6 +236,8 @@
 | Priority | P1 |
 | Notes | Core functionality is intact but visual bugs are present on the page, flagged for separate defect reports |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_018 |
@@ -215,6 +249,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | Clicks register on whichever element loads under the cursor during the extended load time, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -228,6 +264,8 @@
 | Priority | P0 |
 | Notes | All 6 product images are replaced with the pug image for problem_user, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_020 |
@@ -239,6 +277,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | Multiple visual defects present, prices are unstable and change on every interaction, product page shows correct price and image for all items, flagged for defect reports |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -252,6 +292,8 @@
 | Priority | P2 |
 | Notes | |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_022 |
@@ -263,6 +305,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -276,6 +320,8 @@
 | Priority | P0 |
 | Notes | |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_024 |
@@ -288,6 +334,8 @@
 | Priority | P1 |
 | Notes | Social media links to Saucelabs Facebook, X and LinkedIn present on item detail page |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_INV_025 |
@@ -299,6 +347,8 @@
 | Status | Passed |
 | Priority | P1 |
 | Notes | Page takes noticeably longer to load than other users, all elements are correct once loading is complete |
+
+---
 
 | Field | Details |
 |-------|---------|

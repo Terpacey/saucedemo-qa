@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-DELAY_PAGE_LOAD = 1
+DELAY_PAGE_LOAD = 0
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from pages.login_page import LoginPage
@@ -13,6 +13,11 @@ def driver():
     options = Options()
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_experimental_option("prefs", {
+        "credentials_enable_service": False,
+        "profile.password_manager_enabled": False,
+        "profile.password_manager_leak_detection": False,
+    })
     driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     driver.delete_all_cookies()

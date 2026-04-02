@@ -12,6 +12,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_002 |
@@ -23,6 +25,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -36,6 +40,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_004 |
@@ -47,6 +53,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -60,6 +68,8 @@
 | Priority | P0 |
 | Notes | Tax is shown as a dollar amount only — no percentage label displayed |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_006 |
@@ -71,6 +81,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -84,6 +96,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_008 |
@@ -95,6 +109,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -108,6 +124,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_010 |
@@ -119,6 +137,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Cancel on step 2 returns to inventory rather than back to step 1 or the cart — checkout progress is abandoned |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -132,6 +152,8 @@
 | Priority | P0 |
 | Notes | Error message format is "Error: X is required" — no "Epic sadface:" prefix; different format from login error messages (see D_001) |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_012 |
@@ -143,6 +165,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -156,6 +180,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_014 |
@@ -167,6 +193,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Prices are correct and unaffected by visual_user's inventory-layer price randomisation bug |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -180,6 +208,8 @@
 | Priority | P0 |
 | Notes | See D_023 — Last Name field input is routed to the First Name field for problem_user; checkout cannot be completed |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CHK_016 |
@@ -191,6 +221,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | See D_024 — Last Name field non-functional for error_user; see D_025 — Finish button unresponsive for error_user |
+
+---
 
 | Field | Details |
 |-------|---------|

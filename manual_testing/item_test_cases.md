@@ -12,6 +12,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_002 |
@@ -23,6 +25,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -36,6 +40,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_004 |
@@ -47,6 +53,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -60,6 +68,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_006 |
@@ -71,6 +81,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Image shows a forearm in a black sleeve (white skin) holding a backpack by the top handle |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -84,6 +96,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_008 |
@@ -95,6 +109,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -108,6 +124,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_010 |
@@ -119,6 +137,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -132,6 +152,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_012 |
@@ -143,6 +165,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -156,6 +180,8 @@
 | Priority | P1 |
 | Notes | All item links route to the wrong detail pages. Full mapping observed: Backpack → Fleece Jacket, Bolt T-Shirt → Onesie, Onesie → Red T-Shirt, Bike Light → Bolt T-Shirt, Test.allTheThings() T-Shirt → Backpack, Fleece Jacket → "ITEM NOT FOUND" error page. Bike Light detail page is unreachable via any route. "ITEM NOT FOUND" page displays nonsensical error text and an enlarged pug image. Detail pages that do load display correct product data (name, description, price, image). |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_014 |
@@ -168,6 +194,8 @@
 | Priority | P1 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_ITM_015 |
@@ -179,6 +207,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | All other items had correct images on both inventory and detail pages |
+
+---
 
 | Field | Details |
 |-------|---------|

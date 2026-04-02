@@ -1,2 +1,0 @@
-# qa portfolio web
-

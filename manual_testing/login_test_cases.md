@@ -12,6 +12,8 @@
 | Priority | P0 |
 | Notes | Password is written on login page for all users, results in browser giving a "Change your password" warning due to a reported data breach |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_002 |
@@ -23,6 +25,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -36,6 +40,8 @@
 | Priority | P0 |
 | Notes | Password is written on login page for all users, results in browser giving a "Change your password" warning due to a reported data breach<br>User successfully logged in but immediately encounters a visual bug in the inventory where all product images have been replaced with a picture of a dog (pug) with a dirty tennis ball in its mouth |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_004 |
@@ -47,6 +53,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Password is written on login page for all users, results in browser giving a "Change your password" warning due to a reported data breach<br>User successfully logged in but experienced a noticeably longer page load time compared to other users, consistent with expected behaviour for this account type |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -60,6 +68,8 @@
 | Priority | P0 |
 | Notes | Password is written on login page for all users, results in browser giving a "Change your password" warning due to a reported data breach<br>User successfully logged in but the majority of interactive functionality is broken, defects to be documented in subsequent test cases |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_006 |
@@ -71,6 +81,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Password is written on login page for all users, results in browser giving a "Change your password" warning due to a reported data breach<br>User successfully logged in but the Backpack product image is replaced with a pug image, defect to be documented in subsequent test cases |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -84,6 +96,8 @@
 | Priority | P0 |
 | Notes | Tested with "blargh" and "invalid" as invalid passwords, both produced the same result<br>Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_008 |
@@ -95,6 +109,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Locked out status is not confirmed when credentials do not match, generic invalid credentials message is correct behaviour<br>Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -108,6 +124,8 @@
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_010 |
@@ -119,6 +137,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -132,6 +152,8 @@
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_012 |
@@ -143,6 +165,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -156,6 +180,8 @@
 | Priority | P0 |
 | Notes | Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_014 |
@@ -167,6 +193,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | System handled input safely without crashing but did not meet user feedback standard, no guidance provided to user on invalid input, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -180,6 +208,8 @@
 | Priority | P1 |
 | Notes | System handled input safely without crashing but did not meet user feedback standard, no guidance provided to user on invalid input, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_016 |
@@ -191,6 +221,8 @@
 | Status | Failed |
 | Priority | P1 |
 | Notes | System handled input safely without crashing but did not meet user feedback standard, no guidance provided to user on invalid input, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -204,6 +236,8 @@
 | Priority | P1 |
 | Notes | System handled input safely without crashing but did not meet user feedback standard, no guidance provided to user on invalid input, flagged for defect report |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_LOG_018 |
@@ -215,6 +249,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | SQL injection attempt was not treated as a valid input, authentication was not bypassed, system is secure against this attack vector<br>Error message wording is unprofessional and not suitable for a production environment, flagged for defect report |
+
+---
 
 | Field | Details |
 |-------|---------|

@@ -14,6 +14,8 @@
 | Priority | P0 |
 | Notes | Checkout button is active on an empty cart; proceeding through checkout with no items results in a $0.00 order being accepted — see D_019 |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_002 |
@@ -25,6 +27,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | No product image displayed in cart; quantity field is non-editable — see D_020 |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -38,6 +42,8 @@
 | Priority | P0 |
 | Notes | Consistent ordering confirmed: items always appear in the order they were added to the cart |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_004 |
@@ -49,6 +55,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -62,6 +70,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_006 |
@@ -73,6 +83,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -86,6 +98,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_008 |
@@ -97,6 +111,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | Price correct and unaffected by visual_user's inventory-layer price randomisation bug; see D_011 for cart icon misalignment; see D_022 for Checkout button misalignment on the cart page |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -110,6 +126,8 @@
 | Priority | P0 |
 | Notes | — |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_010 |
@@ -121,6 +139,8 @@
 | Status | Passed |
 | Priority | P0 |
 | Notes | — |
+
+---
 
 | Field | Details |
 |-------|---------|
@@ -134,6 +154,8 @@
 | Priority | P1 |
 | Notes | Performance delay is isolated to the inventory page; re-entering inventory from the cart re-triggers the glitch — consistent with existing performance_glitch_user inventory behaviour |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_012 |
@@ -146,6 +168,8 @@
 | Priority | P1 |
 | Notes | See D_015 — Remove buttons on inventory page are not reverted to Add to Cart after Reset App State; clicking Remove on the inventory page post-reset produced no visible change |
 
+---
+
 | Field | Details |
 |-------|---------|
 | Test Case ID | TC_CAR_013 |
@@ -157,6 +181,8 @@
 | Status | Failed |
 | Priority | P0 |
 | Notes | Formally reproduces D_016 during cart testing |
+
+---
 
 | Field | Details |
 |-------|---------|
