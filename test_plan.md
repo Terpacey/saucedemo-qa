@@ -26,7 +26,7 @@ Manual:
 
 - OS: Fedora Linux KDE 43
 - Browser: Chrome
-- Python 3.14.3
+- Python 3.14.3 (confirmed compatible with 3.13.x)
 - Automation designed to be portable across operating systems
 
 ### Exclusions

@@ -43,6 +43,8 @@ def driver():
         from selenium.webdriver.firefox.options import Options
         options = Options()
         options.set_preference("signon.rememberSignons", False)
+        if os.environ.get("CI"):
+            options.add_argument("--headless")
         drv = webdriver.Firefox(options=options)
     else:
         from selenium.webdriver.chrome.options import Options
@@ -50,6 +52,8 @@ def driver():
         if sys.platform != "win32":
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
+        if os.environ.get("CI"):
+            options.add_argument("--headless=new")
         options.add_experimental_option("prefs", {
             "credentials_enable_service": False,
             "profile.password_manager_enabled": False,

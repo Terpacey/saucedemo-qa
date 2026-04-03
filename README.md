@@ -37,26 +37,34 @@ An HTML report is generated automatically at `automation/reports/report.html` an
 
 **Changing the browser**
 
-Set the `BROWSER` constant to your chosen browser:
+Pass a `BROWSER` environment variable — no file editing required:
 
-```python
-BROWSER = "chrome"    # default
-BROWSER = "firefox"   # requires geckodriver on PATH
-BROWSER = "edge"      # requires msedgedriver on PATH
+```bash
+# Linux / macOS
+BROWSER=firefox pytest
+BROWSER=edge pytest
+
+# Windows (PowerShell)
+$env:BROWSER = "firefox"; pytest
 ```
 
-Geckodriver (Firefox) and msedgedriver (Edge) are separate executables that act as the bridge between Selenium and their respective browsers. They must be installed and available on your system PATH before switching.
+Supported values: `chrome` (default), `firefox`, `edge`. Firefox requires [geckodriver](https://github.com/mozilla/geckodriver/releases) on PATH; Edge requires msedgedriver. These are driver executables that act as the bridge between Selenium and the browser, the same role ChromeDriver plays for Chrome.
 
-Linux-specific Chrome flags are applied automatically and only when Chrome is selected. No other manual changes are needed when switching browsers.
+To change the default permanently, edit `BROWSER` in `automation/config.py`. Linux-specific Chrome flags are applied automatically and only when Chrome is selected.
 
 **Changing run speed**
 
-All delay constants across every page object and `conftest.py` are controlled by the `FAST_MODE` flag:
+All delay constants are controlled by `FAST_MODE`. Pass it as an environment variable:
 
-```python
-FAST_MODE = False    # default — runs at human-visible speed (~10 minutes)
-FAST_MODE = True     # near-zero delays (~2 minutes)
+```bash
+# Linux / macOS
+FAST_MODE=true pytest    # near-zero delays (~2 minutes)
+
+# Windows (PowerShell)
+$env:FAST_MODE = "true"; pytest
 ```
 
-Note: `DELAY_SORT` in `InventoryPage` keeps a minimum of 0.3 s even in `FAST_MODE`. Sorting triggers a full DOM re-render; removing all delay here produces stale-element failures.
+`FAST_MODE` defaults to `false` locally and is set automatically to `true` in CI. To change the local default, edit `FAST_MODE` in `automation/config.py`.
+
+Note: `DELAY_SORT` in `InventoryPage` keeps a minimum of 0.3 s even when `FAST_MODE` is on. Sorting triggers a full DOM re-render; removing all delay here produces stale-element failures.
 

@@ -194,4 +194,4 @@ These tests have no corresponding manual test case.
 | D_024 | Checkout | Major | P1 | Open | TC_CHK_016 |
 | D_025 | Checkout | Critical | P0 | Open | TC_CHK_016 |
 
-_D_021 was not raised; defect IDs are not fully sequential._
+D_021 — Void (see [defect_reports/cart/D_021.md](defect_reports/cart/D_021.md))
