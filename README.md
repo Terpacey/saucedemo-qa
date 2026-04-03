@@ -48,5 +48,6 @@ Replace it with the driver for your chosen browser, ensuring the relevant driver
 ```python
 driver = webdriver.Edge(options=options)
 ```
+Note: Current config settings only work for Chromium-based browsers, please ensure that you run these automation tests accordingly.
 
 Linux-specific Chrome flags and the post-run report opener are applied automatically based on the detected OS. No manual changes are needed when switching between Linux and Windows.
