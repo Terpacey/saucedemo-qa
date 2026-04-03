@@ -14,6 +14,7 @@ def test_valid_login_standard_user(standard_user_session):
     "visual_user",
 ])
 def test_valid_login_all_users(driver, login_page, username):
+    # Runs once per username; each iteration receives a fresh driver and login_page
     login_page.login(username, "secret_sauce")
     assert login_page.is_on_inventory_page()
 

@@ -4,10 +4,15 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage:
+
+    # Selectors for login page elements
+
     USERNAME_FIELD = "user-name"
     PASSWORD_FIELD = "password"
     LOGIN_BUTTON = "login-button"
     ERROR_MESSAGE = "h3[data-test='error']"
+
+    # Artificial delays for visual confirmation, unnecessary for tests, can be set to 0
 
     DELAY_INPUT = 0.5
     DELAY_POST_LOGIN = 1.5
@@ -37,10 +42,12 @@ class LoginPage:
         self.click_login()
 
     def get_error_message(self):
+        # Returns empty string if no error is shown, avoiding exception
         elements = self.driver.find_elements(By.CSS_SELECTOR, self.ERROR_MESSAGE)
         if elements:
             return elements[0].text
         return ""
 
     def is_on_inventory_page(self):
-        return "/inventory" in self.driver.current_url
+        # URL check to confirm successful login
+        return "/inventory" in self.driver.current_url 

@@ -13,10 +13,12 @@ The goal of this project is to showcase junior QA testing skills including:
 ## Technologies Used
 - Python
 - Selenium WebDriver
-- PyTest
+- Pytest
 - GitHub Version Control
 
 ## Project Structure
+- test_plan.md → Test plan
+- rtm.md → Requirements Traceability Matrix
 - manual_testing/ → Manual test cases
 - defect_reports/ → Individual defect reports logged during testing
 - automation/ → Automated test scripts
@@ -24,21 +26,27 @@ The goal of this project is to showcase junior QA testing skills including:
 - automation/tests/ → Test implementations
 
 ## How to Run Automation Tests
+
 ```bash
 pip install -r automation/requirements.txt
+cd automation
 pytest
 ```
-The browser set up for this project is Chrome to represent the most common user base.
-To change the web browser used, navigate to 
-- automation/
-Open the script and find the following line of code
 
-```bash
-driver = webdriver.Chrome()
-```
-Change it from Chrome to the browser of your choice after ensuring all required drivers are installed.
-For example, to change the browser to Edge, edit the code to match the following:
+An HTML report is generated automatically at `automation/reports/report.html` and will open in your default browser when the run completes. Each run overwrites the previous report.
 
-```bash
-driver = webdriver.Edge()
+Each page object in `automation/pages/` contains delay constants (e.g. `DELAY_ACTION`, `DELAY_SORT`, `DELAY_POST_LOGIN`) and `automation/conftest.py` contains `DELAY_PAGE_LOAD`. These are set to non-zero values to make test execution visible at human speed. With delays enabled, the full suite takes approximately 10 minutes. Setting all delay constants to `0` reduces this to approximately 2 minutes.
+
+The browser used for this project is Chrome. To change the browser, open `automation/conftest.py` and locate the `driver` fixture. Find the following line:
+
+```python
+driver = webdriver.Chrome(options=options)
 ```
+
+Replace it with the driver for your chosen browser, ensuring the relevant driver is installed. For example, to use Edge:
+
+```python
+driver = webdriver.Edge(options=options)
+```
+
+Linux-specific Chrome flags and the post-run report opener are applied automatically based on the detected OS. No manual changes are needed when switching between Linux and Windows.

@@ -10,6 +10,7 @@ Test type naming convention is as follows:
 
 - Login: TC_LOG_XXX
 - Inventory: TC_INV_XXX
+- Item: TC_ITM_XXX
 - Cart: TC_CAR_XXX
 - Checkout: TC_CHK_XXX
 - Navigation: TC_NAV_XXX
