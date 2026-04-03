@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver.common.by import By
+from config import delay
 
 
 class LoginPage:
@@ -13,9 +14,10 @@ class LoginPage:
     ERROR_MESSAGE = "h3[data-test='error']"
 
     # Artificial delays for visual confirmation, unnecessary for tests, can be set to 0
+    # Controlled via FAST_MODE in config.py
 
-    DELAY_INPUT = 0.5
-    DELAY_POST_LOGIN = 1.5
+    DELAY_INPUT = delay(0.5)
+    DELAY_POST_LOGIN = delay(1.5)
 
     def __init__(self, driver):
         self.driver = driver

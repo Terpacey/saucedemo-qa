@@ -4,7 +4,7 @@
 This project demonstrates manual and automated quality assurance testing using Python Selenium and PyTest on the SauceDemo platform.
 
 ## Purpose
-The goal of this project is to showcase junior QA testing skills including:
+The goal of this project is to showcase QA testing skills including:
 - Test planning
 - Manual test documentation
 - Basic automation testing
@@ -35,19 +35,28 @@ pytest
 
 An HTML report is generated automatically at `automation/reports/report.html` and will open in your default browser when the run completes. Each run overwrites the previous report.
 
-Each page object in `automation/pages/` contains delay constants (e.g. `DELAY_ACTION`, `DELAY_SORT`, `DELAY_POST_LOGIN`) and `automation/conftest.py` contains `DELAY_PAGE_LOAD`. These are set to non-zero values to make test execution visible at human speed. With delays enabled, the full suite takes approximately 10 minutes. Setting all delay constants to `0` reduces this to approximately 2 minutes.
+**Changing the browser**
 
-The browser used for this project is Chrome. To change the browser, open `automation/conftest.py` and locate the `driver` fixture. Find the following line:
-
-```python
-driver = webdriver.Chrome(options=options)
-```
-
-Replace it with the driver for your chosen browser, ensuring the relevant driver is installed. For example, to use Edge:
+Set the `BROWSER` constant to your chosen browser:
 
 ```python
-driver = webdriver.Edge(options=options)
+BROWSER = "chrome"    # default
+BROWSER = "firefox"   # requires geckodriver on PATH
+BROWSER = "edge"      # requires msedgedriver on PATH
 ```
-Note: Current config settings only work for Chromium-based browsers, please ensure that you run these automation tests accordingly.
 
-Linux-specific Chrome flags and the post-run report opener are applied automatically based on the detected OS. No manual changes are needed when switching between Linux and Windows.
+Geckodriver (Firefox) and msedgedriver (Edge) are separate executables that act as the bridge between Selenium and their respective browsers. They must be installed and available on your system PATH before switching.
+
+Linux-specific Chrome flags are applied automatically and only when Chrome is selected. No other manual changes are needed when switching browsers.
+
+**Changing run speed**
+
+All delay constants across every page object and `conftest.py` are controlled by the `FAST_MODE` flag:
+
+```python
+FAST_MODE = False    # default — runs at human-visible speed (~10 minutes)
+FAST_MODE = True     # near-zero delays (~2 minutes)
+```
+
+Note: `DELAY_SORT` in `InventoryPage` keeps a minimum of 0.3 s even in `FAST_MODE`. Sorting triggers a full DOM re-render; removing all delay here produces stale-element failures.
+

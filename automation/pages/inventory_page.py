@@ -4,6 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from config import delay
 
 
 class InventoryPage:
@@ -24,9 +25,10 @@ class InventoryPage:
     # Artificial delays, DELAY_ACTION for visual confirmation for user convenience
     # Avoid setting DELAY_SORT to 0; sorting re-renders the entire item list and
     # reading before the DOM settles can produce stale results on slower machines
+    # Controlled via FAST_MODE in config.py; DELAY_SORT keeps a 0.3 s minimum even in FAST_MODE
 
-    DELAY_ACTION = 0.5
-    DELAY_SORT = 1.0
+    DELAY_ACTION = delay(0.5)
+    DELAY_SORT = delay(1.0, minimum=0.3)
 
     def __init__(self, driver):
         self.driver = driver

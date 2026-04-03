@@ -184,3 +184,4 @@ cython_debug/
 .claude/
 CLAUDE.md
 /automation/reports
+automation/reports/report.html

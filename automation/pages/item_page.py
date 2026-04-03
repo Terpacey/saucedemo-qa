@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver.common.by import By
+from config import delay
 
 
 class ItemPage:
@@ -16,8 +17,9 @@ class ItemPage:
     CART_BADGE = ".shopping_cart_badge"
 
     # Artificial delay for visual confirmation, unnecessary for tests, can be set to 0
+    # Controlled via FAST_MODE in config.py
 
-    DELAY_ACTION = 0.5
+    DELAY_ACTION = delay(0.5)
 
     def __init__(self, driver):
         self.driver = driver
