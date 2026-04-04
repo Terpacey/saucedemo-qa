@@ -3,6 +3,7 @@ import pytest
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from pages.inventory_page import InventoryPage
+from selenium.webdriver.remote.webdriver import WebDriver
 
 
 # --- Chained Fixtures ---
@@ -11,7 +12,7 @@ from pages.inventory_page import InventoryPage
 # Defined here rather than conftest.py as they are only used by this file
 
 @pytest.fixture
-def standard_user_checkout_step1(standard_user_session):
+def standard_user_checkout_step1(standard_user_session: WebDriver) -> WebDriver:
     inv = InventoryPage(standard_user_session)
     inv.click_item_button("Sauce Labs Backpack")
     inv.click_cart()
@@ -20,7 +21,7 @@ def standard_user_checkout_step1(standard_user_session):
 
 
 @pytest.fixture
-def standard_user_checkout_step2(standard_user_checkout_step1):
+def standard_user_checkout_step2(standard_user_checkout_step1: WebDriver) -> WebDriver:
     checkout = CheckoutPage(standard_user_checkout_step1)
     checkout.fill_first_name("A")
     checkout.fill_last_name("B")
@@ -30,14 +31,16 @@ def standard_user_checkout_step2(standard_user_checkout_step1):
 
 
 @pytest.fixture
-def standard_user_confirmation_page(standard_user_checkout_step2):
+def standard_user_confirmation_page(standard_user_checkout_step2: WebDriver) -> WebDriver:
     CheckoutPage(standard_user_checkout_step2).click_finish()
     return standard_user_checkout_step2
 
 
 # --- standard_user ---
 
-def test_step1_page_layout(standard_user_checkout_step1):
+@pytest.mark.smoke
+@pytest.mark.standard_user
+def test_step1_page_layout(standard_user_checkout_step1) -> None:
     checkout = CheckoutPage(standard_user_checkout_step1)
     assert checkout.get_page_title() == "Checkout: Your Information"
     assert checkout.first_name_field_is_present()
@@ -47,7 +50,8 @@ def test_step1_page_layout(standard_user_checkout_step1):
     assert checkout.cancel_button_is_present()
 
 
-def test_valid_data_navigates_to_step2(standard_user_checkout_step1):
+@pytest.mark.standard_user
+def test_valid_data_navigates_to_step2(standard_user_checkout_step1) -> None:
     checkout = CheckoutPage(standard_user_checkout_step1)
     checkout.fill_first_name("A")
     checkout.fill_last_name("B")
@@ -56,19 +60,23 @@ def test_valid_data_navigates_to_step2(standard_user_checkout_step1):
     assert "checkout-step-two" in standard_user_checkout_step1.current_url
 
 
-def test_overview_item_display(standard_user_checkout_step2):
+@pytest.mark.standard_user
+def test_overview_item_display(standard_user_checkout_step2) -> None:
     checkout = CheckoutPage(standard_user_checkout_step2)
     assert "Sauce Labs Backpack" in checkout.get_item_names()
     assert checkout.get_item_quantities()[0] == "1"
 
 
-def test_overview_item_price(standard_user_checkout_step2):
+@pytest.mark.standard_user
+def test_overview_item_price(standard_user_checkout_step2) -> None:
     checkout = CheckoutPage(standard_user_checkout_step2)
     # zip pairs names and prices by position; keying by name is preferred over index access as display order may vary
     assert dict(zip(checkout.get_item_names(), checkout.get_item_prices()))["Sauce Labs Backpack"] == "$29.99"
 
 
-def test_overview_totals_display(standard_user_checkout_step2):
+@pytest.mark.smoke
+@pytest.mark.standard_user
+def test_overview_totals_display(standard_user_checkout_step2) -> None:
     checkout = CheckoutPage(standard_user_checkout_step2)
     assert checkout.get_item_total() == "Item total: $29.99"
     assert checkout.get_tax() == "Tax: $2.40"
@@ -77,34 +85,42 @@ def test_overview_totals_display(standard_user_checkout_step2):
     assert checkout.get_shipping_info() != ""
 
 
-def test_finish_navigates_to_confirmation(standard_user_checkout_step2):
+@pytest.mark.smoke
+@pytest.mark.standard_user
+def test_finish_navigates_to_confirmation(standard_user_checkout_step2) -> None:
     CheckoutPage(standard_user_checkout_step2).click_finish()
     assert "checkout-complete" in standard_user_checkout_step2.current_url
 
 
-def test_confirmation_page_content(standard_user_confirmation_page):
+@pytest.mark.smoke
+@pytest.mark.standard_user
+def test_confirmation_page_content(standard_user_confirmation_page) -> None:
     checkout = CheckoutPage(standard_user_confirmation_page)
     assert "Thank you for your order" in checkout.get_confirmation_header()
     assert checkout.back_home_button_is_present()
 
 
-def test_back_home_returns_to_inventory(standard_user_confirmation_page):
+@pytest.mark.standard_user
+def test_back_home_returns_to_inventory(standard_user_confirmation_page) -> None:
     CheckoutPage(standard_user_confirmation_page).click_back_home()
     assert "/inventory" in standard_user_confirmation_page.current_url
     assert InventoryPage(standard_user_confirmation_page).get_cart_badge_count() == 0
 
 
-def test_cancel_step1_returns_to_cart(standard_user_checkout_step1):
+@pytest.mark.standard_user
+def test_cancel_step1_returns_to_cart(standard_user_checkout_step1) -> None:
     CheckoutPage(standard_user_checkout_step1).click_cancel_step1()
     assert "/cart" in standard_user_checkout_step1.current_url
 
 
-def test_cancel_step2_returns_to_inventory(standard_user_checkout_step2):
+@pytest.mark.standard_user
+def test_cancel_step2_returns_to_inventory(standard_user_checkout_step2) -> None:
     CheckoutPage(standard_user_checkout_step2).click_cancel_step2()
     assert "/inventory" in standard_user_checkout_step2.current_url
 
 
-def test_empty_first_name_error(standard_user_checkout_step1):
+@pytest.mark.standard_user
+def test_empty_first_name_error(standard_user_checkout_step1) -> None:
     checkout = CheckoutPage(standard_user_checkout_step1)
     checkout.fill_last_name("B")
     checkout.fill_postal_code("12345")
@@ -112,7 +128,8 @@ def test_empty_first_name_error(standard_user_checkout_step1):
     assert "First Name is required" in checkout.get_error_message()
 
 
-def test_empty_last_name_error(standard_user_checkout_step1):
+@pytest.mark.standard_user
+def test_empty_last_name_error(standard_user_checkout_step1) -> None:
     checkout = CheckoutPage(standard_user_checkout_step1)
     checkout.fill_first_name("A")
     checkout.fill_postal_code("12345")
@@ -120,7 +137,8 @@ def test_empty_last_name_error(standard_user_checkout_step1):
     assert "Last Name is required" in checkout.get_error_message()
 
 
-def test_empty_postal_code_error(standard_user_checkout_step1):
+@pytest.mark.standard_user
+def test_empty_postal_code_error(standard_user_checkout_step1) -> None:
     checkout = CheckoutPage(standard_user_checkout_step1)
     checkout.fill_first_name("A")
     checkout.fill_last_name("B")
@@ -130,7 +148,8 @@ def test_empty_postal_code_error(standard_user_checkout_step1):
 
 # --- visual_user ---
 
-def test_visual_user_checkout_prices_correct(visual_user_session):
+@pytest.mark.visual_user
+def test_visual_user_checkout_prices_correct(visual_user_session) -> None:
     inv = InventoryPage(visual_user_session)
     inv.click_item_button("Sauce Labs Backpack")
     inv.click_cart()
@@ -148,7 +167,9 @@ def test_visual_user_checkout_prices_correct(visual_user_session):
 
 # --- problem_user ---
 
-def test_problem_user_checkout_blocked_d023(problem_user_session):
+@pytest.mark.defect
+@pytest.mark.problem_user
+def test_problem_user_checkout_blocked_d023(problem_user_session) -> None:
     # Asserts buggy behaviour as expected outcome; test will fail if defect is resolved
     inv = InventoryPage(problem_user_session)
     inv.click_item_button("Sauce Labs Backpack")
@@ -164,7 +185,9 @@ def test_problem_user_checkout_blocked_d023(problem_user_session):
 
 # --- error_user ---
 
-def test_error_user_checkout_fails_d024_d025(error_user_session):
+@pytest.mark.defect
+@pytest.mark.error_user
+def test_error_user_checkout_fails_d024_d025(error_user_session) -> None:
     # Asserts buggy behaviour as expected outcome; test will fail if defect is resolved
     inv = InventoryPage(error_user_session)
     inv.click_item_button("Sauce Labs Backpack")
@@ -182,7 +205,8 @@ def test_error_user_checkout_fails_d024_d025(error_user_session):
 
 # --- performance_glitch_user ---
 
-def test_performance_glitch_user_checkout_completes(performance_glitch_user_session):
+@pytest.mark.performance_glitch_user
+def test_performance_glitch_user_checkout_completes(performance_glitch_user_session) -> None:
     inv = InventoryPage(performance_glitch_user_session)
     inv.wait_for_items()
     inv.click_item_button("Sauce Labs Backpack")

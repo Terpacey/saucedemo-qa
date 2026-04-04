@@ -114,7 +114,8 @@ All testing, documentation, and automation performed by Hari C.
 - Python
 - Selenium WebDriver
 - Pytest
-- GitHub / GitHub Desktop
+- ruff (linting)
+- GitHub / GitHub Actions / GitHub Desktop
 - VSCodium (Development Environment)
 
 ## Risks and Mitigations
